@@ -1,6 +1,6 @@
 ﻿namespace Shared.DDD;
 
-public interface IEntiy<T> : IEntity
+public interface IEntity<T> : IEntity
 {
     public T Id { get; set; }
 }

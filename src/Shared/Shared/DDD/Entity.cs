@@ -1,6 +1,6 @@
 ﻿namespace Shared.DDD;
 
-public class Entity<T> : IEntity
+public abstract class Entity<T> : IEntity<T>
 {
     public T Id { get; set; } = default!;
     public DateTime? CreatedAt { get; set; }
