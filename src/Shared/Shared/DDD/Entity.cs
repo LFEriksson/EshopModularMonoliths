@@ -1,12 +1,8 @@
 ﻿namespace Shared.DDD;
 
-public interface IEntiy<T> : IEntity
+public class Entity<T> : IEntity
 {
-    public T Id { get; set; }
-}
-
-public interface IEntity
-{
+    public T Id { get; set; } = default!;
     public DateTime? CreatedAt { get; set; }
     public string? CreatedBy { get; set; }
     public DateTime? LastModified { get; set; }
