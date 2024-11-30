@@ -20,7 +20,7 @@ public static class CatalogModule
             config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
         });
 
-        // Dara - Infrastructure services
+        // Data - Infrastructure services
         var connectionString = configuration.GetConnectionString("DefaultConnection");
 
         services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
