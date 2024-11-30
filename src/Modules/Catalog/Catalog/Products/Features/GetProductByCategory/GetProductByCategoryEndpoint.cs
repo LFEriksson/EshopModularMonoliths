@@ -1,5 +1,4 @@
-﻿
-namespace Catalog.Products.Features.GetProductByCategory;
+﻿namespace Catalog.Products.Features.GetProductByCategory;
 
 public record GetProductByCategoryResponse(IEnumerable<ProductDto> Products);
 public class GetProductByCategoryEndpoint : ICarterModule
