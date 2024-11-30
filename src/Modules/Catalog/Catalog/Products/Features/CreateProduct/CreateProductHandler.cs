@@ -1,4 +1,6 @@
-﻿namespace Catalog.Products.Features.CreateProduct;
+﻿using FluentValidation;
+
+namespace Catalog.Products.Features.CreateProduct;
 
 public record CreateProductCommand(ProductDto Product) : ICommand<CreateProductResult>;
 
@@ -17,12 +19,23 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
     }
 }
 
-internal class CreateProductHandler(CatalogDbContext dbContext) : ICommandHandler<CreateProductCommand, CreateProductResult>
+internal class CreateProductHandler(
+    CatalogDbContext dbContext,
+    IValidator<CreateProductCommand> validator,
+    ILogger<CreateProductHandler> logger) : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
-        var product = CreateNewProduct(command.Product);
+        var validationResult = await validator.ValidateAsync(command, cancellationToken);
+        var errors = validationResult.Errors.Select(x => x.ErrorMessage).ToList();
+        if (errors.Any())
+        {
+            throw new ValidationException(errors.FirstOrDefault());
+        }
 
+        logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}", command);
+
+        var product = CreateNewProduct(command.Product);
         dbContext.Products.Add(product);
         await dbContext.SaveChangesAsync(cancellationToken);
 
