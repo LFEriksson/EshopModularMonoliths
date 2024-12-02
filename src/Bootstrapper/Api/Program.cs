@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
+
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 
@@ -26,12 +29,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.MapCarter();
+app.UseSerilogRequestLogging();
+app.UseExceptionHandler(option => { });
+
 app.UseCatalogModule()
     .UseBasketModule()
     .UseOrderingModule();
-
-app.MapCarter();
-
-app.UseExceptionHandler(option => { });
 
 app.Run();

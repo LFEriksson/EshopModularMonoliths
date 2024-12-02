@@ -19,6 +19,7 @@ public static class CatalogModule
         {
             config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             config.AddOpenBehavior(typeof(ValidationBehavior<,>));
+            config.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
 
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
@@ -32,7 +33,8 @@ public static class CatalogModule
         services.AddDbContext<CatalogDbContext>((sp, options) =>
         {
             options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
-            options.UseNpgsql(connectionString);
+            options.UseNpgsql(connectionString)
+            .EnableSensitiveDataLogging();
         });
 
         services.AddScoped<IDataSeeder, CatalogDataSeeder>();
