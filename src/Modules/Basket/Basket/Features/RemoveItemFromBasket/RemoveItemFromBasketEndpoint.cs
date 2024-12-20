@@ -13,7 +13,7 @@ internal class RemoveItemFromBasketEndpoint : ICarterModule
             var command = new RemoveItemFromBasketCommand(userName, itemId);
             var result = await sender.Send(command);
             var response = result.Adapt<RemoveItemFromBasketResponse>();
-            return Results.Created($"/Basket/{response.id}", response);
+            return Results.Ok(response);
         })
         .Produces<RemoveItemFromBasketResponse>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status400BadRequest)
