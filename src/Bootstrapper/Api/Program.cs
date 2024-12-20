@@ -5,10 +5,12 @@ builder.Host.UseSerilog((context, configuration) =>
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCarterWithAssemblies(typeof(CatalogModule).Assembly);
+
+builder.Services.AddCarterWithAssemblies(
+    typeof(CatalogModule).Assembly,
+    typeof(BasketModule).Assembly);
 
 builder.Services
     .AddCatalogModule(builder.Configuration)
