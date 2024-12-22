@@ -7,10 +7,13 @@ builder.Host.UseSerilog((context, configuration) =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var catalogAssembly = typeof(CatalogModule).Assembly;
+var basketAssembly = typeof(BasketModule).Assembly;
 
-builder.Services.AddCarterWithAssemblies(
-    typeof(CatalogModule).Assembly,
-    typeof(BasketModule).Assembly);
+builder.Services.AddCarterWithAssemblies(catalogAssembly, basketAssembly);
+
+builder.Services.AddMediatRWithAssemblies(catalogAssembly, basketAssembly);
+
 
 builder.Services
     .AddCatalogModule(builder.Configuration)
