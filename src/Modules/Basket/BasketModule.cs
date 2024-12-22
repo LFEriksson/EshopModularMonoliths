@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+﻿using Basket.Data.Repository;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Data.Interceptors;
@@ -10,6 +11,7 @@ public static class BasketModule
     public static IServiceCollection AddBasketModule(this IServiceCollection services, IConfiguration configuration)
     {
         // Add services to the container.
+        services.AddScoped<IBasketRepository, BasketRepository>();
 
         // Api Endpoints services
 
@@ -38,6 +40,8 @@ public static class BasketModule
         // 1. Use Api Endpoints services
 
         // 2. Use Application Use Cases services
+
+
 
         // 3. Use Data - Infrastructure services
         app.UseMigration<BasketDbContext>();
