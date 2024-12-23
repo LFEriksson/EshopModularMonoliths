@@ -29,7 +29,7 @@ internal class AddItemIntoBasketHandler(IBasketRepository repository) : ICommand
             command.ShoppingCartItemDto.Color,
             command.ShoppingCartItemDto.ProductName);
 
-        await repository.SaveChangesAsync(cancellationToken);
+        await repository.SaveChangesAsync(command.UserName, cancellationToken);
 
         return new AddItemIntoBasketResult(shoppingCart.Id);
     }

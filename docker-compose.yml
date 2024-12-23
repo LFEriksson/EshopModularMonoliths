@@ -2,8 +2,13 @@ services:
   eshopdb:
     image: postgres
 
+  distrubutedcache:
+    image: redis
+
   seq:
     image: datalust/seq:latest
+
+    
 
 volumes:
   postgres_eshopdb:

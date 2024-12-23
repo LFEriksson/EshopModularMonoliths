@@ -1,5 +1,6 @@
 ﻿using Basket.Data.Repository;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Data.Interceptors;
@@ -12,6 +13,7 @@ public static class BasketModule
     {
         // Add services to the container.
         services.AddScoped<IBasketRepository, BasketRepository>();
+        services.Decorate<IBasketRepository, CachedBasketRepository>();
 
         // Api Endpoints services
 
