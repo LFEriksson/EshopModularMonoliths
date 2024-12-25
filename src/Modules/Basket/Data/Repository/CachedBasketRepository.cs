@@ -51,7 +51,6 @@ public class CachedBasketRepository(IBasketRepository repository, IDistributedCa
         await cache.SetStringAsync(userName, JsonSerializer.Serialize(basket, _options), cancellationToken);
 
         return basket;
-
     }
 
     public async Task<int> SaveChangesAsync(string? userName = null,  CancellationToken cancellationToken = default)

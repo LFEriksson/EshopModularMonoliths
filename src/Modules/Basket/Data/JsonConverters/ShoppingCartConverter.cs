@@ -11,9 +11,9 @@ public class ShoppingCartConverter : JsonConverter<ShoppingCart>
         var jsonDocument = JsonDocument.ParseValue(ref reader);
         var rootElement = jsonDocument.RootElement;
 
-        var id = rootElement.GetProperty("Id").GetGuid();
-        var userName = rootElement.GetProperty("UserName").GetString()!;
-        var itemsElement = rootElement.GetProperty("Items");
+        var id = rootElement.GetProperty("id").GetGuid();
+        var userName = rootElement.GetProperty("userName").GetString()!;
+        var itemsElement = rootElement.GetProperty("items");
 
         var shoppingCart = ShoppingCart.Create(id, userName);
 
@@ -30,10 +30,13 @@ public class ShoppingCartConverter : JsonConverter<ShoppingCart>
     public override void Write(Utf8JsonWriter writer, ShoppingCart value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
+
         writer.WriteString("id", value.Id.ToString());
         writer.WriteString("userName", value.UserName);
-        writer.WriteStartArray("items");
+
+        writer.WritePropertyName("items");
         JsonSerializer.Serialize(writer, value.Items, options);
+
         writer.WriteEndObject();
     }
 }

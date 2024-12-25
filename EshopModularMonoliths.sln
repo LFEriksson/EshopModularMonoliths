@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B0EA9169-ED59-491F-86C8-E4177C1B2728}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Contracts", "src\Modules\Catalog\Catalog.Gontracts\Catalog.Contracts.csproj", "{A951059A-67E8-4CA3-9818-759C8FF4709D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Contracts", "src\Shared\Shared.Contracts\Shared.Contracts.csproj", "{22576E25-7463-45E4-A36B-DB38FA69CD75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A951059A-67E8-4CA3-9818-759C8FF4709D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A951059A-67E8-4CA3-9818-759C8FF4709D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A951059A-67E8-4CA3-9818-759C8FF4709D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A951059A-67E8-4CA3-9818-759C8FF4709D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +82,7 @@ Global
 		{A90441E9-039B-4D82-A276-670AC555BC8E} = {A48787E0-3794-45B1-ADD6-1648DDB629AA}
 		{0CE126D8-B52F-487E-A270-369FBE868D35} = {54CBACAF-1571-4A90-A922-F804F7DB1575}
 		{04181C0E-E157-402C-9622-45885D33DB80} = {2034DE99-672E-4015-978C-22BB934D2694}
+		{A951059A-67E8-4CA3-9818-759C8FF4709D} = {513B6209-3DEF-497E-8634-5809BE53C0AE}
+		{22576E25-7463-45E4-A36B-DB38FA69CD75} = {2034DE99-672E-4015-978C-22BB934D2694}
 	EndGlobalSection
 EndGlobal
