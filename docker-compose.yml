@@ -8,7 +8,9 @@ services:
   seq:
     image: datalust/seq:latest
 
-    
+  messagebus:
+    image: rabbitmq:3.8-management
+      
 
 volumes:
   postgres_eshopdb:

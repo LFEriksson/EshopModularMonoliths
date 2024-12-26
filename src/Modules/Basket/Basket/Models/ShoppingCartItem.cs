@@ -22,6 +22,7 @@ public class ShoppingCartItem : Entity<Guid>
         ProductName = productName;
     }
 
+
     [JsonConstructor]
     public ShoppingCartItem(Guid id, Guid shoppingCartId, Guid productId, int quantity, string color, decimal price, string productName)
     {
@@ -32,5 +33,10 @@ public class ShoppingCartItem : Entity<Guid>
         Color = color;
         Price = price;
         ProductName = productName;
+    }
+    public void UpdatePrice(decimal newPrice)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(newPrice);
+        Price = newPrice;
     }
 }

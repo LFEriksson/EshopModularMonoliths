@@ -28,19 +28,19 @@ public class Product : Aggregate<Guid>
         return product;
     }
 
-    public void Update(string name, List<string> category, string description, string imageFile, decimal price)
+    public void Update(string name, List<string> category, string description, string imageFile, decimal newPrice)
     {
         ArgumentException.ThrowIfNullOrEmpty(name);
-        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(newPrice);
+
         Name = name;
         Category = category;
         Description = description;
         ImageFile = imageFile;
-        Price = price;
 
-        if (Price != price)
+        if (Price != newPrice)
         {
-            Price = Price;
+            Price = newPrice;
             AddDomainEvent(new ProductPriceChangedEvent(this));
         }
     }

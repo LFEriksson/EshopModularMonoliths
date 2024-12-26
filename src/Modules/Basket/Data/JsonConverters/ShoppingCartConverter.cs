@@ -7,7 +7,6 @@ public class ShoppingCartConverter : JsonConverter<ShoppingCart>
 {
     public override ShoppingCart? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-
         var jsonDocument = JsonDocument.ParseValue(ref reader);
         var rootElement = jsonDocument.RootElement;
 
@@ -18,9 +17,9 @@ public class ShoppingCartConverter : JsonConverter<ShoppingCart>
         var shoppingCart = ShoppingCart.Create(id, userName);
 
         var items = itemsElement.Deserialize<List<ShoppingCartItem>>(options);
-        if (items is not null)
+        if (items != null)
         {
-            var itemsField =typeof(ShoppingCart).GetField("_items", BindingFlags.NonPublic | BindingFlags.Instance);
+            var itemsField = typeof(ShoppingCart).GetField("_items", BindingFlags.NonPublic | BindingFlags.Instance);
             itemsField?.SetValue(shoppingCart, items);
         }
 

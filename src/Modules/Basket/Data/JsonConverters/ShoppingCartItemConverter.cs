@@ -10,13 +10,13 @@ public class ShoppingCartItemConverter : JsonConverter<ShoppingCartItem>
         var jsonDocument = JsonDocument.ParseValue(ref reader);
         var rootElement = jsonDocument.RootElement;
 
-        var id = rootElement.GetProperty("Id").GetGuid();
-        var shoppingCartId = rootElement.GetProperty("ShoppingCartId").GetGuid();
-        var productId = rootElement.GetProperty("ProductId").GetGuid();
-        var quantity = rootElement.GetProperty("Quantity").GetInt32();
-        var color = rootElement.GetProperty("Color").GetString()!;
-        var price = rootElement.GetProperty("Price").GetDecimal();
-        var productName = rootElement.GetProperty("ProductName").GetString()!;
+        var id = rootElement.GetProperty("id").GetGuid();
+        var shoppingCartId = rootElement.GetProperty("shoppingCartId").GetGuid();
+        var productId = rootElement.GetProperty("productId").GetGuid();
+        var quantity = rootElement.GetProperty("quantity").GetInt32();
+        var color = rootElement.GetProperty("color").GetString()!;
+        var price = rootElement.GetProperty("price").GetDecimal();
+        var productName = rootElement.GetProperty("productName").GetString()!;
 
         return new ShoppingCartItem(id, shoppingCartId, productId, quantity, color, price, productName);
     }
@@ -25,12 +25,14 @@ public class ShoppingCartItemConverter : JsonConverter<ShoppingCartItem>
     {
         writer.WriteStartObject();
 
-        writer.WriteString("Id", value.Id.ToString());
-        writer.WriteString("ShoppingCartId", value.ShoppingCartId.ToString());
-        writer.WriteString("ProductId", value.ProductId.ToString());
-        writer.WriteNumber("Quantity", value.Quantity);
-        writer.WriteString("Color", value.Color);
-        writer.WriteNumber("Price", value.Price);
-        writer.WriteString("ProductName", value.ProductName);
+        writer.WriteString("id", value.Id.ToString());
+        writer.WriteString("shoppingCartId", value.ShoppingCartId.ToString());
+        writer.WriteString("productId", value.ProductId.ToString());
+        writer.WriteNumber("quantity", value.Quantity);
+        writer.WriteString("color", value.Color);
+        writer.WriteNumber("price", value.Price);
+        writer.WriteString("productName", value.ProductName);
+
+        writer.WriteEndObject();
     }
 }
