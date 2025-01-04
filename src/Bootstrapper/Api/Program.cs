@@ -1,4 +1,3 @@
-
 using Keycloak.AuthServices.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +25,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 builder.Services.AddMassTransitWithAssemblies(builder.Configuration, catalogAssembly, basketAssembly);
 
 builder.Services.AddKeycloakWebApiAuthentication(builder.Configuration);
-builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
 
 builder.Services
