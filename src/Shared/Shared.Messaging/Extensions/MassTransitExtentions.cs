@@ -3,9 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace Shared.Messaging.Extenasions;
-
-public static class MassTansitExtensions
+namespace Shared.Messaging.Extensions;
+public static class MassTransitExtentions
 {
     public static IServiceCollection AddMassTransitWithAssemblies
         (this IServiceCollection services, IConfiguration configuration, params Assembly[] assemblies)
@@ -13,20 +12,22 @@ public static class MassTansitExtensions
         services.AddMassTransit(config =>
         {
             config.SetKebabCaseEndpointNameFormatter();
+
             config.SetInMemorySagaRepositoryProvider();
+
             config.AddConsumers(assemblies);
             config.AddSagaStateMachines(assemblies);
             config.AddSagas(assemblies);
             config.AddActivities(assemblies);
-            
-            config.UsingRabbitMq((context, cfg) =>
+
+            config.UsingRabbitMq((context, configurator) =>
             {
-                cfg.Host(new Uri(configuration["MessageBroker:Host"]!), h =>
+                configurator.Host(new Uri(configuration["MessageBroker:Host"]!), host =>
                 {
-                    h.Username(configuration["MessageBroker:Username"]!);
-                    h.Password(configuration["MessageBroker:Password"]!);
+                    host.Username(configuration["MessageBroker:UserName"]!);
+                    host.Password(configuration["MessageBroker:Password"]!);
                 });
-                cfg.ConfigureEndpoints(context);
+                configurator.ConfigureEndpoints(context);
             });
         });
 

@@ -5,4 +5,4 @@ global using Shared.Extensions;
 global using Carter;
 global using Shared.Exceptions.Handlers;
 global using Serilog;
-global using Shared.Messaging.Extenasions;
+global using Shared.Messaging.Extensions;
