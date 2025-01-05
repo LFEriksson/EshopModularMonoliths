@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Contracts", "src\Sha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "src\Shared\Shared.Messaging\Shared.Messaging.csproj", "{DF7ADC10-D108-48BC-91C1-610FDA974D40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Contracts", "..\Basket.Contracts\Basket.Contracts.csproj", "{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{DF7ADC10-D108-48BC-91C1-610FDA974D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7ADC10-D108-48BC-91C1-610FDA974D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7ADC10-D108-48BC-91C1-610FDA974D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +97,6 @@ Global
 		{A951059A-67E8-4CA3-9818-759C8FF4709D} = {513B6209-3DEF-497E-8634-5809BE53C0AE}
 		{22576E25-7463-45E4-A36B-DB38FA69CD75} = {2034DE99-672E-4015-978C-22BB934D2694}
 		{DF7ADC10-D108-48BC-91C1-610FDA974D40} = {2034DE99-672E-4015-978C-22BB934D2694}
+		{64E39D05-648B-4DE4-8EC5-55B5A3B1BA05} = {A48787E0-3794-45B1-ADD6-1648DDB629AA}
 	EndGlobalSection
 EndGlobal

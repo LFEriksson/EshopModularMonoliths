@@ -19,3 +19,4 @@ global using Basket.Data.Repository;
 global using Catalog.Contracts.Products.Features.GetProductById;
 global using Shared.Messaging.Events;
 global using System.Text.Json;
+global using Basket.Contracts.Basket.Features.GetBasket;
