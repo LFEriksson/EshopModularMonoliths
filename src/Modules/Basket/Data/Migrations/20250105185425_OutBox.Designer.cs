@@ -3,6 +3,7 @@ using System;
 using Basket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Basket.Data.Migrations
 {
     [DbContext(typeof(BasketDbContext))]
-    partial class BasketDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250105185425_OutBox")]
+    partial class OutBox
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,10 +48,10 @@ namespace Basket.Data.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("OccuredOnUTC")
+                    b.Property<DateTime>("OccuredOn")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime?>("ProcessedOnUTC")
+                    b.Property<DateTime?>("ProcessedOn")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Type")

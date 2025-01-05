@@ -1,6 +1,5 @@
-﻿using Basket.Data.Repository;
+﻿using Basket.Data.Processors;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Data.Interceptors;
@@ -31,6 +30,8 @@ public static class BasketModule
             options.UseNpgsql(connectionString)
             .EnableSensitiveDataLogging();
         });
+
+        services.AddHostedService<OutboxProcessor>();
 
         return services;
     }
