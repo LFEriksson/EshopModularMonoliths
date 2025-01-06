@@ -13,8 +13,12 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Bootstrapper/Api/Api.csproj", "src/Bootstrapper/Api/"]
-COPY ["src/Modules/Basket/Basket.csproj", "src/Modules/Basket/"]
+COPY ["src/Modules/Basket/Basket/Basket.csproj", "src/Modules/Basket/Basket/"]
+COPY ["src/Shared/Shared.Messaging/Shared.Messaging.csproj", "src/Shared/Shared.Messaging/"]
 COPY ["src/Shared/Shared/Shared.csproj", "src/Shared/Shared/"]
+COPY ["src/Shared/Shared.Contracts/Shared.Contracts.csproj", "src/Shared/Shared.Contracts/"]
+COPY ["src/Modules/Catalog/Catalog.Contracts/Catalog.Contracts.csproj", "src/Modules/Catalog/Catalog.Contracts/"]
+COPY ["src/Modules/Basket/Basket.Contracts/Basket.Contracts.csproj", "src/Modules/Basket/Basket.Contracts/"]
 COPY ["src/Modules/Catalog/Catalog/Catalog.csproj", "src/Modules/Catalog/Catalog/"]
 COPY ["src/Modules/Ordering/Ordering.csproj", "src/Modules/Ordering/"]
 RUN dotnet restore "./src/Bootstrapper/Api/Api.csproj"

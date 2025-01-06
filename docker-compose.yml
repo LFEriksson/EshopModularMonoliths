@@ -2,7 +2,7 @@ services:
   eshopdb:
     image: postgres
 
-  distrubutedcache:
+  distributedcache:
     image: redis
 
   seq:
@@ -13,6 +13,13 @@ services:
   
   identity:
       image: quay.io/keycloak/keycloak:26.0.7
+
+  api:
+      image: ${DOCKER_REGISTRY-}api
+      build:
+        context: .
+        dockerfile: src/Bootstrapper/Api/Dockerfile
+
 
 volumes:
   postgres_eshopdb:

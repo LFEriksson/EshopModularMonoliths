@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering", "src\Modules\Ord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared\Shared.csproj", "{04181C0E-E157-402C-9622-45885D33DB80}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B0EA9169-ED59-491F-86C8-E4177C1B2728}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Contracts", "src\Shared\Shared.Contracts\Shared.Contracts.csproj", "{22576E25-7463-45E4-A36B-DB38FA69CD75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Messaging", "src\Shared\Shared.Messaging\Shared.Messaging.csproj", "{DF7ADC10-D108-48BC-91C1-610FDA974D40}"
@@ -34,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.Contracts", "src\Modules\Basket\Basket.Contracts\Basket.Contracts.csproj", "{2C8A2ADE-96B7-4560-89BE-3FBEA5B64F89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Contracts", "src\Modules\Catalog\Catalog.Contracts\Catalog.Contracts.csproj", "{C0F1A7AE-76E9-43D9-BD59-D5F5C6710E72}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{3876A38D-6DED-4183-A1F8-26CDCA7C6E17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +57,6 @@ Global
 		{04181C0E-E157-402C-9622-45885D33DB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04181C0E-E157-402C-9622-45885D33DB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04181C0E-E157-402C-9622-45885D33DB80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0EA9169-ED59-491F-86C8-E4177C1B2728}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22576E25-7463-45E4-A36B-DB38FA69CD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -81,6 +77,10 @@ Global
 		{C0F1A7AE-76E9-43D9-BD59-D5F5C6710E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0F1A7AE-76E9-43D9-BD59-D5F5C6710E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0F1A7AE-76E9-43D9-BD59-D5F5C6710E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3876A38D-6DED-4183-A1F8-26CDCA7C6E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3876A38D-6DED-4183-A1F8-26CDCA7C6E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3876A38D-6DED-4183-A1F8-26CDCA7C6E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3876A38D-6DED-4183-A1F8-26CDCA7C6E17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
