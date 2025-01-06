@@ -6,15 +6,23 @@ services:
 
   distributedcache:
     image: redis
+    networks:
+        - backend
 
   seq:
     image: datalust/seq:latest
+    networks:
+        - backend
 
   messagebus:
     image: rabbitmq:3.8-management
+    networks:
+        - backend
   
   identity:
       image: quay.io/keycloak/keycloak:26.0.7
+      networks:
+        - backend
 
   api:
       image: ${DOCKER_REGISTRY-}api
