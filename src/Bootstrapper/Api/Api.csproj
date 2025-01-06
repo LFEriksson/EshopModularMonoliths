@@ -13,12 +13,12 @@
 	<ItemGroup>
 		<PackageReference Include="Keycloak.AuthServices.Authentication" Version="2.6.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
@@ -28,7 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\Modules\Basket\Basket.csproj" />
+		<ProjectReference Include="..\..\Modules\Basket\Basket\Basket.csproj" />
 		<ProjectReference Include="..\..\Modules\Catalog\Catalog\Catalog.csproj" />
 		<ProjectReference Include="..\..\Modules\Ordering\Ordering.csproj" />
 		<ProjectReference Include="..\..\Shared\Shared.Messaging\Shared.Messaging.csproj" />
